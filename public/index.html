@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Guru Guru Api translator">
+  <meta name="author" content="Emiliano Acevedo">
+  <title>Guru Guru Api</title>
+  <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+  <section>
+    <h1>Guru Guru Api</h1>
+    <form id="guru-form">
+      <textarea name="text" placeholder="Place your text here" minlength="1" rows="5"></textarea>
+      <button id="submit-button">Submit!</button>
+    </form>
+    <div>
+      <p id="response">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo deleniti ex doloribus cum quisquam. Porro quas sequi incidunt repudiandae dolores vel officiis quos totam. Maxime autem vel asperiores vitae praesentium!</p>
+    </div>
+    <code>const exampleData = {
+  text: "<span id="span-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam alias repudiandae blanditiis? Perspiciatis eos harum iste amet consequuntur fugit doloremque numquam nesciunt dignissimos animi non distinctio, assumenda ea est. In?</span>"
+}
+
+const fetchOptions = data => ({
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(data)
+})
+
+const postingData = async data => {
+  const request = fetch('domain.com/api', fetchOptions(exampleData))
+  const response = await request
+  if (!response.ok) return // Do something in case of error response
+  const jsonData = await response.json()
+  // Do something with your json response
+}</code>
+  </section>
+  <script src="app.js"></script>
+</body>
+</html>
