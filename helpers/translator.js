@@ -7,6 +7,6 @@ export default function guruTranslate (string) {
     .replaceAll('t', 'k')
     .replaceAll('l', 'j')
     .replaceAll('m', 'g')
-    .replaceAll('n', 'g')
     .replaceAll('r', 'gu')
+    .replaceAll('gg', 'g')
 }

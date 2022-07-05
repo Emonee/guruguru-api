@@ -13,14 +13,28 @@
   <section>
     <h1>Guru Guru Api</h1>
     <form id="guru-form">
-      <textarea name="text" placeholder="Place your text here" minlength="1" rows="5"></textarea>
-      <button id="submit-button">Submit!</button>
+      <textarea name="text" placeholder="Place your text here" minlength="1" maxlength="2000" rows="5" required></textarea>
+      <div class="buttons-container">
+        <button id="short-submit">Short string example</button>
+        <button id="long-submit">Long string example</button>
+      </div>
     </form>
-    <div>
-      <p id="response">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo deleniti ex doloribus cum quisquam. Porro quas sequi incidunt repudiandae dolores vel officiis quos totam. Maxime autem vel asperiores vitae praesentium!</p>
-    </div>
-    <code>const exampleData = {
-  text: "<span id="span-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam alias repudiandae blanditiis? Perspiciatis eos harum iste amet consequuntur fugit doloremque numquam nesciunt dignissimos animi non distinctio, assumenda ea est. In?</span>"
+    <p id="translation">Traducción</p>
+    <button id="copy-translation" class="center-block">Copy translation</button>
+    <h2>Example code:</h2>
+    <button id="copy-code" class="center-block">Copy Code</button>
+    <code id="short-string-example">const shortString = "<span class="span-text">Your string here</span>"
+
+const getGuruTranslation = async data => {
+  const request = fetch(`domain.com/api/short/${shortString}`)
+  const response = await request
+  if (!response.ok) {
+    return // Do something in case of error response
+  }
+  const stringResponse = await response.text()
+  return stringResponse // Do something with your stringResponse
+}</code><code id="long-string-example" class="hidden">const longString = {
+  text: "<span class="span-text">Your string here</span>"
 }
 
 const fetchOptions = data => ({
@@ -29,12 +43,14 @@ const fetchOptions = data => ({
   body: JSON.stringify(data)
 })
 
-const postingData = async data => {
+const getGuruTranslation = async data => {
   const request = fetch('domain.com/api', fetchOptions(exampleData))
   const response = await request
-  if (!response.ok) return // Do something in case of error response
-  const jsonData = await response.json()
-  // Do something with your json response
+  if (!response.ok) {
+    return // Do something in case of error response
+  }
+  const jsonResponse = await response.json()
+  return jsonResponse // Do something with your jsonResponse
 }</code>
   </section>
   <script src="app.js"></script>

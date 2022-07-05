@@ -2,20 +2,22 @@
   "name": "guruguru-api",
   "type": "module",
   "version": "1.0.0",
-  "description": "",
+  "description": "Translation api",
   "main": "app.js",
   "scripts": {
     "dev": "nodemon --watch './' --ext '*'",
-    "start": "node app.js"
+    "start": "node app.js",
+    "lint": "standard --fix"
   },
   "keywords": [],
-  "author": "",
+  "author": "Emiliano Acevedo",
   "license": "ISC",
   "dependencies": {
-    "cors": "^2.8.5",
+    "cors": "2.8.5",
     "express": "4.18.1"
   },
   "devDependencies": {
-    "nodemon": "2.0.18"
+    "nodemon": "2.0.18",
+    "standard": "17.0.0"
   }
 }
