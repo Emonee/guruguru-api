@@ -50,6 +50,6 @@ copyTranslationButtonn.addEventListener('click', () => {
 })
 
 copyCodeButton.addEventListener('click', () => {
-  const text = codeShortString.classList.contains('block') ? codeShortString.innerText : codeLongString.innerText
+  const text = codeShortString.classList.contains('hidden') ? codeLongString.innerText : codeShortString.innerText
   copyToClipboard(text)
 })
